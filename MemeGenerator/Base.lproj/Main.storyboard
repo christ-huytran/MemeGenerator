@@ -20,12 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vsl-NZ-Uzh">
-                                <rect key="frame" x="90.5" y="89.5" width="420" height="420"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="vsl-NZ-Uzh" secondAttribute="height" multiplier="370:370" id="t5k-NR-oda"/>
-                                </constraints>
-                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISs-zC-V1f">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <constraints>
@@ -47,20 +41,69 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="QCQ-w3-yKg"/>
                                 </items>
                             </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gsq-jh-oLq">
+                                <rect key="frame" x="90" y="60" width="420" height="480"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6CK-3b-DwP">
+                                        <rect key="frame" x="10" y="0.0" width="400" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="NcK-SU-q8d"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="aRq-Ea-JKB"/>
+                                        </connections>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vsl-NZ-Uzh">
+                                        <rect key="frame" x="0.0" y="40" width="420" height="400"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSE-2X-ChC">
+                                        <rect key="frame" x="10" y="450" width="400" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="l94-1Y-7G8"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="hmI-fX-6PA"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vsl-NZ-Uzh" firstAttribute="width" secondItem="Gsq-jh-oLq" secondAttribute="height" multiplier="7:8" id="M4D-81-Vt8"/>
+                                </constraints>
+                            </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="10Y-GA-zFi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="4q4-cB-fbR"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vsl-NZ-Uzh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="13X-Vd-mie"/>
                             <constraint firstItem="ISs-zC-V1f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="2YW-s7-yVY"/>
-                            <constraint firstItem="vsl-NZ-Uzh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="B1g-XX-UEY"/>
+                            <constraint firstItem="Gsq-jh-oLq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="AmJ-Hy-sW4"/>
+                            <constraint firstItem="Gsq-jh-oLq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HZp-AF-uUs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ISs-zC-V1f" secondAttribute="trailing" constant="-20" id="MGA-6T-JtH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="10Y-GA-zFi" secondAttribute="trailing" constant="-20" id="R6k-h5-sdt"/>
+                            <constraint firstItem="Gsq-jh-oLq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UFd-iD-nej"/>
+                            <constraint firstItem="10Y-GA-zFi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="UVd-4t-vsE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ISs-zC-V1f" secondAttribute="bottom" id="g2u-Ko-eZC"/>
-                            <constraint firstItem="vsl-NZ-Uzh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="x1A-El-sjF"/>
+                            <constraint firstItem="Gsq-jh-oLq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="jDe-7A-KvV"/>
+                            <constraint firstItem="10Y-GA-zFi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ucK-kS-YGI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="QSE-2X-ChC" id="atj-9A-xi6"/>
                         <outlet property="cameraButton" destination="edd-bY-FAP" id="Pb9-Wp-Rbd"/>
                         <outlet property="imagePickerView" destination="vsl-NZ-Uzh" id="dP1-hj-9NQ"/>
+                        <outlet property="topTextField" destination="6CK-3b-DwP" id="FPu-C1-Q2e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

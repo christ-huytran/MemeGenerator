@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeGenerator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +19,44 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vsl-NZ-Uzh">
+                                <rect key="frame" x="90.5" y="89.5" width="420" height="420"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vsl-NZ-Uzh" secondAttribute="height" multiplier="370:370" id="t5k-NR-oda"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISs-zC-V1f">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ymP-zM-k2d"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="organize" id="6Gc-Ae-2Kb">
+                                        <connections>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="YQ5-9K-B2Q"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vsl-NZ-Uzh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="13X-Vd-mie"/>
+                            <constraint firstItem="ISs-zC-V1f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="2YW-s7-yVY"/>
+                            <constraint firstItem="vsl-NZ-Uzh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="B1g-XX-UEY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ISs-zC-V1f" secondAttribute="trailing" constant="-20" id="MGA-6T-JtH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ISs-zC-V1f" secondAttribute="bottom" id="g2u-Ko-eZC"/>
+                            <constraint firstItem="vsl-NZ-Uzh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="x1A-El-sjF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imagePickerView" destination="vsl-NZ-Uzh" id="dP1-hj-9NQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="313"/>
         </scene>
     </scenes>
 </document>

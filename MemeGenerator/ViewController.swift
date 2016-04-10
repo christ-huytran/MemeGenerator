@@ -18,8 +18,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        topTextField.delegate = self
-        bottomTextField.delegate = self
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -62,6 +60,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if textField.text == "TOP" || textField.text == "BOTTOM" {
+            textField.text = ""
+        }
     }
 
 }

@@ -81,7 +81,13 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="10Y-GA-zFi">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="4q4-cB-fbR"/>
+                                    <navigationItem title="Memerator" id="4q4-cB-fbR">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="GaD-k5-bAC">
+                                            <connections>
+                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="B5h-O6-xuG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -103,6 +109,8 @@
                         <outlet property="bottomTextField" destination="QSE-2X-ChC" id="atj-9A-xi6"/>
                         <outlet property="cameraButton" destination="edd-bY-FAP" id="Pb9-Wp-Rbd"/>
                         <outlet property="imagePickerView" destination="vsl-NZ-Uzh" id="dP1-hj-9NQ"/>
+                        <outlet property="navBar" destination="10Y-GA-zFi" id="sud-2W-vcn"/>
+                        <outlet property="toolBar" destination="ISs-zC-V1f" id="mZD-PI-pFP"/>
                         <outlet property="topTextField" destination="6CK-3b-DwP" id="FPu-C1-Q2e"/>
                     </connections>
                 </viewController>

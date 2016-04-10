@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var toolBar: UIToolbar!
+    
+    
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
@@ -104,6 +108,37 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.CGRectValue().height
     }
-
+    
+    func saveMeme() {
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.memes.append(meme)
+    }
+    
+    func generateMemedImage() -> UIImage {
+        
+        navBar.hidden = true
+        toolBar.hidden = true
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        navBar.hidden = false
+        toolBar.hidden = false
+        
+        return memedImage
+    }
+    
+    @IBAction func shareMeme(sender: UIBarButtonItem) {
+        let activityVC = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil)
+        activityVC.completionWithItemsHandler = {
+            (activity, success, items, error) in
+            self.saveMeme()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        self.presentViewController(activityVC, animated: true, completion: nil)
+    }
 }
 

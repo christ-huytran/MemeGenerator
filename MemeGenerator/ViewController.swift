@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
     
+    @IBOutlet weak var saveAndShareButton: UIBarButtonItem!
     
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -33,12 +34,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         
+        if imagePickerView.image == nil {
+            saveAndShareButton.enabled = false
+        }
+        
         subscribeToKeyboardNotifications()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        unsubscribeFromKeyboardNotifications()
     }
 
 
@@ -61,6 +66,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = image
+            
+            // enable saveAndShareButton
+            saveAndShareButton.enabled = true
         }
         
         dismissViewControllerAnimated(true, completion: nil)
@@ -105,7 +113,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        let keyboardSize = userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue
+        //print(keyboardSize.CGRectValue().height)
         return keyboardSize.CGRectValue().height
     }
     
@@ -139,6 +148,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         self.presentViewController(activityVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func pressCancel(sender: UIBarButtonItem) {
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+        imagePickerView.image = nil
+        saveAndShareButton.enabled = false
     }
 }
 

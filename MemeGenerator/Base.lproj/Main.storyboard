@@ -87,6 +87,11 @@
                                                 <action selector="shareMeme:" destination="BYZ-38-t0r" id="B5h-O6-xuG"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="h9m-sf-v7t">
+                                            <connections>
+                                                <action selector="pressCancel:" destination="BYZ-38-t0r" id="Shq-V4-uy8"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -110,6 +115,7 @@
                         <outlet property="cameraButton" destination="edd-bY-FAP" id="Pb9-Wp-Rbd"/>
                         <outlet property="imagePickerView" destination="vsl-NZ-Uzh" id="dP1-hj-9NQ"/>
                         <outlet property="navBar" destination="10Y-GA-zFi" id="sud-2W-vcn"/>
+                        <outlet property="saveAndShareButton" destination="GaD-k5-bAC" id="6sK-hM-4wF"/>
                         <outlet property="toolBar" destination="ISs-zC-V1f" id="mZD-PI-pFP"/>
                         <outlet property="topTextField" destination="6CK-3b-DwP" id="FPu-C1-Q2e"/>
                     </connections>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E19925C1CBCB9BE0012849D /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E19925B1CBCB8DD0012849D /* Impact.ttf */; };
+		3E2348C61CC1F4C40057D5F4 /* SentMemesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2348C51CC1F4C40057D5F4 /* SentMemesTableView.swift */; };
 		3EF4EABE1CB881B1003D5BF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF4EABD1CB881B1003D5BF1 /* AppDelegate.swift */; };
 		3EF4EAC01CB881B1003D5BF1 /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF4EABF1CB881B1003D5BF1 /* MemeEditorViewController.swift */; };
 		3EF4EAC31CB881B1003D5BF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF4EAC11CB881B1003D5BF1 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		3E19925B1CBCB8DD0012849D /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
+		3E2348C51CC1F4C40057D5F4 /* SentMemesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesTableView.swift; sourceTree = "<group>"; };
 		3EF4EABA1CB881B1003D5BF1 /* MemeGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF4EABD1CB881B1003D5BF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EF4EABF1CB881B1003D5BF1 /* MemeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				3EF4EABD1CB881B1003D5BF1 /* AppDelegate.swift */,
 				3EF4EABF1CB881B1003D5BF1 /* MemeEditorViewController.swift */,
 				3EF4EAC11CB881B1003D5BF1 /* Main.storyboard */,
+				3E2348C51CC1F4C40057D5F4 /* SentMemesTableView.swift */,
 				3EFDD8551CB9FEC00010CA17 /* Meme.swift */,
 				3E19925B1CBCB8DD0012849D /* Impact.ttf */,
 				3EF4EAC41CB881B1003D5BF1 /* Assets.xcassets */,
@@ -267,6 +270,7 @@
 				3EFDD8561CB9FEC00010CA17 /* Meme.swift in Sources */,
 				3EF4EAC01CB881B1003D5BF1 /* MemeEditorViewController.swift in Sources */,
 				3EF4EABE1CB881B1003D5BF1 /* AppDelegate.swift in Sources */,
+				3E2348C61CC1F4C40057D5F4 /* SentMemesTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -169,6 +169,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         bottomTextField.text = "BOTTOM"
         imagePickerView.image = nil
         saveAndShareButton.enabled = false
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

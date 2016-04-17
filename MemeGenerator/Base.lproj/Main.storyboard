@@ -121,6 +121,38 @@
             </objects>
             <point key="canvasLocation" x="2663" y="1330"/>
         </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="BmI-Af-r3Y">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailViewController" id="YHH-Tc-SV4" customClass="MemeDetailViewController" customModule="MemeGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WwG-VM-yf1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zex-ks-GNL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IY8-fU-SVK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7F1-LM-aYg">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7F1-LM-aYg" firstAttribute="leading" secondItem="IY8-fU-SVK" secondAttribute="leadingMargin" constant="-20" id="MfZ-S5-GWb"/>
+                            <constraint firstItem="7F1-LM-aYg" firstAttribute="top" secondItem="WwG-VM-yf1" secondAttribute="bottom" id="r3I-DD-28w"/>
+                            <constraint firstItem="Zex-ks-GNL" firstAttribute="top" secondItem="7F1-LM-aYg" secondAttribute="bottom" id="tuz-3e-RP9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7F1-LM-aYg" secondAttribute="trailing" constant="-20" id="ykj-un-S9R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailImageView" destination="7F1-LM-aYg" id="hPo-hr-e1H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKR-72-GeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2663" y="2027"/>
+        </scene>
         <!--Sent Memes Collection View Controller-->
         <scene sceneID="aJT-fc-jX2">
             <objects>
@@ -263,6 +295,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8ly-dh-EOX"/>
+        <segue reference="CjL-P7-iBJ"/>
     </inferredMetricsTieBreakers>
 </document>

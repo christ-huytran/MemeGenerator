@@ -67,7 +67,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         if UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation) {
             imagePickerView.contentMode = .ScaleAspectFit
         } else {
-            imagePickerView.contentMode = .ScaleAspectFill
+            imagePickerView.contentMode = .ScaleAspectFit
         }
     }
 

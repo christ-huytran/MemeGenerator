@@ -25,7 +25,18 @@ class SentMemesTableView: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SentMemeTableCell")! as UITableViewCell
+        
         cell.imageView?.image = memes[indexPath.row].memedImage
+        cell.imageView?.sizeToFit()
+        
+        let itemSize:CGSize = CGSizeMake(120, 120)
+        UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.mainScreen().scale)
+        let imageRect : CGRect = CGRectMake(0, 0, itemSize.width, itemSize.height)
+        cell.imageView!.image?.drawInRect(imageRect)
+        cell.imageView!.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        
         return cell
     }
     

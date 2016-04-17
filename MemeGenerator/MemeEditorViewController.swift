@@ -52,11 +52,23 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         }
         
         subscribeToKeyboardNotifications()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.checkOrientation), name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+    
+    func checkOrientation() {
+        if UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation) {
+            imagePickerView.contentMode = .ScaleAspectFit
+        } else {
+            imagePickerView.contentMode = .ScaleAspectFill
+        }
     }
 
 
@@ -78,6 +90,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            checkOrientation()
             imagePickerView.image = image
             
             // enable saveAndShareButton

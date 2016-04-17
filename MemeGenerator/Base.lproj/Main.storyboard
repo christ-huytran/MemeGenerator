@@ -69,7 +69,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="vsl-NZ-Uzh" secondAttribute="trailing" id="FS5-eU-XCP"/>
-                                    <constraint firstItem="vsl-NZ-Uzh" firstAttribute="width" secondItem="Gsq-jh-oLq" secondAttribute="width" id="LRY-pP-fff"/>
                                     <constraint firstItem="QSE-2X-ChC" firstAttribute="width" secondItem="Gsq-jh-oLq" secondAttribute="width" multiplier="0.7" id="NGQ-fZ-bG2"/>
                                     <constraint firstItem="6CK-3b-DwP" firstAttribute="width" secondItem="Gsq-jh-oLq" secondAttribute="width" multiplier="0.7" id="Qqe-VF-KzK"/>
                                     <constraint firstItem="vsl-NZ-Uzh" firstAttribute="leading" secondItem="Gsq-jh-oLq" secondAttribute="leading" id="VI3-zt-52m"/>
